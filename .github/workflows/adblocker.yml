@@ -26,7 +26,7 @@ jobs:
           python main.py
 
       - name: Upload FULL_lista.txt as an artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@latest
         with:
           name: FULL_lista
           path: FULL_lista.txt
