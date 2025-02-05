@@ -2,7 +2,7 @@ name: Generate AdBlock List
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Codziennie o północy UTC
+    - cron: '0 * * * *'  # Co godzinę o pełnej godzinie
 
 jobs:
   build:
