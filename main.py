@@ -46,8 +46,8 @@ exclude_list = [
     "adservice.google",
     "googleadservices.com",
     # Możesz dodać też wpisy z gwiazdką dla subdomen:
-    "*.hihonorcloud.com",
-    "*.salusconnect.io"
+    "*.mycafe.games",
+    "*.mycafe.games"
 ]
 
 # Funkcja do rozpoznania, czy reguła należy do wykluczeń, uwzględniając subdomeny
