@@ -2,25 +2,21 @@ import requests
 
 # Linki do pobrania list - możesz je dowolnie edytować
 urls = [
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_33.txt",
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_3.txt",
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_27.txt",
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_5.txt",
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_38.txt",
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_49.txt",
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_51.txt",
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_48.txt",
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_34.txt",
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_4.txt",
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_53.txt",
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt",
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_24.txt",
     "https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/Lite/adblock.txt",
     "https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/Pro/adblock.txt",
     "https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/Xtra/adblock.txt",
     "https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/mini/adblock.txt",
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_14.txt",
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_41.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_4.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/multi.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.plus.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/ultimate.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_5.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_27.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_3.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_33.txt",
 ]
 
 # Lista wykluczeń (można łatwo edytować) - możesz dodać domeny z gwiazdkami, jeśli chcesz uwzględnić subdomeny
