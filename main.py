@@ -32,9 +32,6 @@ exclude_list = [
     "connect.facebook.com",
     "connect.facebook.net",
     "mqtt-mini.facebook.com",
-    "googletagmanager.com",
-    "adservice.google",
-    "googleadservices.com",
     "mycafe.games",
     "tinyco.com",
     "shephertz.com",
@@ -45,6 +42,9 @@ exclude_list = [
     "v-speed.eu",
     ".schwarz",
     "weathercn.com",
+    "googletagmanager.com",
+    "adservice.google",
+    "googleadservices.com",
     # Możesz dodać też wpisy z gwiazdką dla subdomen:
     "*.hihonorcloud.com",
     "*.salusconnect.io"
