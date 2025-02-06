@@ -17,6 +17,14 @@ urls = [
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_27.txt",
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_3.txt",
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_33.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_50.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_31.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_42.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_10.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_30.txt",
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_12.txt",
 ]
 
 # Lista wykluczeń (można łatwo edytować) - możesz dodać domeny z gwiazdkami, jeśli chcesz uwzględnić subdomeny
