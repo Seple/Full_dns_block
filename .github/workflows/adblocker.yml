@@ -25,11 +25,10 @@ jobs:
         run: |
           python main.py
 
-      # Zamiast dodawania artefaktu, zapisujemy plik do repozytorium
-      - name: Commit and push FULL_lista.txt to the repository
+      - name: Commit the generated file to the repository
         run: |
-          git config --global user.email "youremail@example.com"
-          git config --global user.name "Your Name"
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
           git add FULL_lista.txt
           git commit -m "Update FULL_lista.txt"
-          git push
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
