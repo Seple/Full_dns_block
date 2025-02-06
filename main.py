@@ -122,4 +122,3 @@ except Exception as e:
         shutil.copy(backup_file, output_file)
         print(f"🔁 Przywrócono poprzednią wersję listy z {backup_file}")
 
-input("\nNaciśnij Enter, aby zamknąć...")
