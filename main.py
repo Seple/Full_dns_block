@@ -1,6 +1,9 @@
 import requests
+import os
+import shutil
+import concurrent.futures
 
-# Linki do pobrania list - możesz je dowolnie edytować
+# Linki do pobrania list
 urls = [
     "https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/Lite/adblock.txt",
     "https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/Pro/adblock.txt",
@@ -27,8 +30,8 @@ urls = [
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_12.txt",
 ]
 
-# Lista wykluczeń (można łatwo edytować) - możesz dodać domeny z gwiazdkami, jeśli chcesz uwzględnić subdomeny
-exclude_list = [
+# Lista wykluczeń (obsługa wildcard *)
+exclude_list = {
     "b-graph-fallback.facebook.com",
     "b-graph.facebook.com",
     "graph-fallback.facebook.com",
@@ -48,56 +51,75 @@ exclude_list = [
     "candivore.com",
     "salusconnect.io",
     "v-speed.eu",
-    ".schwarz",
+    "schwarz",
     "weathercn.com",
     "googletagmanager.com",
     "adservice.google",
     "googleadservices.com",
-    # Możesz dodać też wpisy z gwiazdką dla subdomen:
-    "*.mycafe.games",
-    "*.mycafe.games"
-]
-
-# Funkcja do rozpoznania, czy reguła należy do wykluczeń, uwzględniając subdomeny
-def is_excluded(rule):
-    for exclude in exclude_list:
-        if '*' in exclude:  # Domena zawierająca gwiazdkę
-            base_domain = exclude.lstrip("*")  # Usuwamy gwiazdkę
-            if base_domain in rule:  # Jeżeli linia zawiera subdomenę, wykluczamy
-                return True
-        else:  # Sprawdzamy pełne domeny
-            if exclude in rule:
-                return True
-    return False
+}
 
 # Plik wynikowy
 output_file = "FULL_lista.txt"
+backup_file = "FULL_lista.bak"
+temp_file = output_file + ".tmp"
 
-# Zbiór do przechowywania reguł
+def fetch_list(url, retries=3):
+    for _ in range(retries):
+        try:
+            response = requests.get(url, timeout=10)
+            response.raise_for_status()
+            lines = response.text.splitlines()
+            print(f"✅ Pobrano: {url} ({len(lines)} reguł)")
+            return lines
+        except requests.exceptions.RequestException as e:
+            print(f"⚠️ Błąd pobierania {url}: {e}")
+    print(f"❌ Nie udało się pobrać: {url}")
+    return []
+
 all_rules = set()
+total_downloaded = 0
 
-# Pobieranie i scalanie list
-for url in urls:
-    try:
-        response = requests.get(url, timeout=10)
-        response.raise_for_status()  # Sprawdzanie, czy odpowiedź jest poprawna
-        rules = response.text.splitlines()  # Dzielimy tekst na linie
+with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+    results = executor.map(fetch_list, urls)
+    
+    for lines in results:
+        total_downloaded += len(lines)
+        for line in lines:
+            line = line.strip()
+            if line.startswith("0.0.0.0") or line.startswith("127.0.0.1"):
+                parts = line.split()
+                if len(parts) == 2:
+                    rule = f"||{parts[1]}^"
+                else:
+                    continue
+            elif line.startswith("||") and line.endswith("^"):
+                rule = line
+            else:
+                continue
+            
+            domain_only = rule[2:-1]
+            if not any(domain_only.endswith(f".{excluded}") or domain_only == excluded for excluded in exclude_list):
+                all_rules.add(rule)
 
-        # Usuwamy linie zaczynające się od "!" oraz "#" (komentarze) oraz puste linie
-        rules = [line for line in rules if line.startswith("||")]
+removed_rules = total_downloaded - len(all_rules)
 
-        # Usuwamy reguły znajdujące się na liście wykluczeń
-        rules = [line for line in rules if not is_excluded(line)]
+# Tworzenie kopii zapasowej przed zapisem
+if os.path.exists(output_file):
+    shutil.copy(output_file, backup_file)
+    print(f"🔄 Utworzono kopię zapasową: {backup_file}")
 
-        # Dodajemy reguły do zbioru (eliminując duplikaty)
-        all_rules.update(rules)
-        print(f"✅ Pobrano: {url}")
-    except requests.exceptions.RequestException as e:
-        print(f"❌ Błąd pobierania {url}: {e}")
+# Atomowy zapis do pliku
+try:
+    with open(temp_file, "w", encoding="utf-8") as f:
+        for rule in sorted(all_rules):
+            f.write(rule + "\n")
+    os.replace(temp_file, output_file)
+    print(f"✅ Nowa lista zapisana w {output_file}")
+    print(f"📊 Podsumowanie: Pobranie: {total_downloaded} reguł, Usunięte (duplikaty i subdomeny): {removed_rules} reguł, Pozostałe unikalne po usunięciu duplikatów i subdomen: {len(all_rules)} reguł")
+except Exception as e:
+    print(f"❌ Błąd zapisu pliku: {e}")
+    if os.path.exists(backup_file):
+        shutil.copy(backup_file, output_file)
+        print(f"🔁 Przywrócono poprzednią wersję listy z {backup_file}")
 
-# Zapis do pliku, sortowanie i eliminowanie podwójnych duplikatów
-with open(output_file, "w", encoding="utf-8") as f:
-    # Posortowanie i zapisanie unikalnych reguł
-    f.write("\n".join(sorted(all_rules)))  # Zapisujemy posortowane reguły
-
-print(f"\n✅ Gotowe! Zoptymalizowana lista zapisana w {output_file}")
+input("\nNaciśnij Enter, aby zamknąć...")
