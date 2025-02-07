@@ -73,7 +73,7 @@
 - `candivore.com`
 - `salusconnect.io`
 - `v-speed.eu`
-- `schwarz`
+- `.schwarz`
 - `weathercn.com`
 
 ### 🔍 Google
