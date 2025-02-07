@@ -6,17 +6,24 @@ import datetime
 
 # Linki do pobrania list
 urls = [
+    # 1Hosts - Lżejsza lista filtrów
     "https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/Lite/adblock.txt",
+    # 1Hosts - Bardziej rozbudowana
     "https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/Pro/adblock.txt",
+    # 1Hosts - Najbardziej kompleksowa
     "https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/Xtra/adblock.txt",
+    # 1Hosts - Mini wersja
     "https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/mini/adblock.txt",
+    # Filtry AdGuard
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt",
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_4.txt",
+    # Hagezi - Różne poziomy filtracji
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt",
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/multi.txt",
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt",
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.plus.txt",
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/ultimate.txt",
+    # Kolejne filtry AdGuard
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_5.txt",
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_27.txt",
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_3.txt",
