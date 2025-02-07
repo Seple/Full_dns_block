@@ -60,6 +60,14 @@ urls = [
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_6.txt",
     # Perflyst and Dandelion Sprout's Smart-TV Blocklist
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_7.txt",
+    # HaGeZi's DynDNS Blocklist
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_54.txt",
+    # HaGeZi's Encrypted DNS/VPN/TOR/Proxy Bypass
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_52.txt",
+    # Phishing Army
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_18.txt",
+    # HaGeZi's Anti-Piracy Blocklist
+    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_46.txt",
 ]
 
 # Lista wykluczeń
