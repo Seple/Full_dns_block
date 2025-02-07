@@ -32,5 +32,5 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add Backup_Full_DNS_Block.txt 
+          git add Backup_Full_DNS_Block.txt Full_DNS_Block.txt
           git diff --staged --quiet || (git commit -m "Update blocklist files" && git push origin main)
