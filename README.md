@@ -1,4 +1,8 @@
 # Full_DNS_Block
-Please be understanding, everything is under construction
 
 Linked lists to reduce size
+
+
+
+
+Please be understanding, everything is under construction
