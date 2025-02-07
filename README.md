@@ -2,7 +2,7 @@
 
 ### Linked Lists to Reduce Size
 
-## 📌 COLLECTION OF LISTS
+## 📌 COLLECTION OF ALL LISTS INCLUDED IN THIS SCRIPT
 
 ### 🛡 1Hosts – Various Filtering Levels
 - [1Hosts Mini](https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/mini/adblock.txt)
