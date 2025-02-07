@@ -93,8 +93,6 @@ exclude_list = {
     "weathercn.com",
     # Google
     "googletagmanager.com",
-    "adservice.google",
-    "googleadservices.com",
 }
 
 # Pliki wynikowe
