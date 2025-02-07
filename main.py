@@ -6,13 +6,10 @@ import datetime
 
 # Linki do pobrania list
 urls = [
-    # 1Hosts - Lżejsza lista filtrów
+    # 1Hosts - Różne poziomy filtracji
     "https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/Lite/adblock.txt",
-    # 1Hosts - Bardziej rozbudowana
     "https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/Pro/adblock.txt",
-    # 1Hosts - Najbardziej kompleksowa
     "https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/Xtra/adblock.txt",
-    # 1Hosts - Mini wersja
     "https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/mini/adblock.txt",
     # Filtry AdGuard
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt",
