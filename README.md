@@ -78,8 +78,6 @@
 
 ### 🔍 Google
 - `googletagmanager.com`
-- `adservice.google`
-- `googleadservices.com`
 
 ---
 
