@@ -2,38 +2,35 @@ name: Generate AdBlock List
 
 on:
   schedule:
-    - cron: '0 */2 * * *'  # Co 2 godziny o pełnej godzinie
-  workflow_dispatch:  # To pozwala na ręczne uruchomienie workflow
+    - cron: 'R */2 * * *'  # Co 2 godziny o losowej minucie
+  workflow_dispatch:  # Możliwość ręcznego uruchomienia
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # Zezwalaj na zapis do repozytorium (konieczne dla 'git push')
+      contents: write  # Zezwala na zapis do repozytorium
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: '3.8'
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          pip install requests
 
       - name: Run the script
         run: |
           python main.py
 
-      - name: Commit the generated file to the repository
+      - name: Commit the generated files to the repository
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add Full_DNS_Block.txt
-          git commit -m "Update Full_DNS_Block.txt"
-          git add Backup_Full_DNS_Block.txt
-          git commit -m "Update Backup_Full_DNS_Block.txt"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          git add Full_DNS_Block.txt Backup_Full_DNS_Block.txt
+          git diff --staged --quiet || (git commit -m "Update blocklist files" && git push origin main)
