@@ -68,6 +68,12 @@ urls = [
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_18.txt",
     # HaGeZi's Anti-Piracy Blocklist
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_46.txt",
+    # HaGeZi's Fake DNS Blocklist
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/fake.txt",
+    # HaGeZi's Pop-Up Ads DNS Blocklist
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/popupads.txt",
+    # KADhosts
+    "https://raw.githubusercontent.com/FiltersHeroes/KADhosts/master/KADhosts.txt",
 ]
 
 # Lista wykluczeń
