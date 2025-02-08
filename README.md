@@ -1,8 +1,7 @@
-# Full_DNS_Block
+# Full DNS Block
 
-### Linked Lists to Reduce Size
-
-## 📌 COLLECTION OF ALL LISTS INCLUDED IN THIS SCRIPT
+## 📌 Collection of All Lists Included in This Script
+This script downloads and processes a collection of DNS blocklists to optimize filtering, reduce redundancy, and enhance blocking efficiency.
 
 ### 🛡 1Hosts – Various Filtering Levels
 - [1Hosts Mini](https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/mini/adblock.txt)
@@ -16,11 +15,6 @@
 - [Pro](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt)
 - [Pro Plus](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.plus.txt)
 - [Ultimate](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/ultimate.txt)
-- [DynDNS Blocklist](https://adguardteam.github.io/HostlistsRegistry/assets/filter_54.txt)
-- [Encrypted DNS/VPN/TOR/Proxy Bypass](https://adguardteam.github.io/HostlistsRegistry/assets/filter_52.txt)
-- [Anti-Piracy Blocklist](https://adguardteam.github.io/HostlistsRegistry/assets/filter_46.txt)
-- [Fake DNS Blocklist](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/fake.txt)
-- [Pop-Up Ads DNS Blocklist](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/popupads.txt)
 
 ### 🛡 OISD – Various Filtering Levels
 - [OISD Basic](https://adguardteam.github.io/HostlistsRegistry/assets/filter_5.txt)
@@ -41,20 +35,25 @@
 - [NoCoin Filter List](https://adguardteam.github.io/HostlistsRegistry/assets/filter_8.txt)
 - [Dandelion Sprout's Anti-Malware List](https://adguardteam.github.io/HostlistsRegistry/assets/filter_12.txt)
 - [Phishing URL Blocklist (PhishTank & OpenPhish)](https://adguardteam.github.io/HostlistsRegistry/assets/filter_30.txt)
-- [Phishing Army](https://adguardteam.github.io/HostlistsRegistry/assets/filter_18.txt)
 - [POL: Polish Filters for Pi-hole](https://adguardteam.github.io/HostlistsRegistry/assets/filter_14.txt)
 - [POL: CERT Polska List of Malicious Domains](https://adguardteam.github.io/HostlistsRegistry/assets/filter_41.txt)
 - [WindowsSpyBlocker - Hosts Spy Rules](https://adguardteam.github.io/HostlistsRegistry/assets/filter_23.txt)
 - [Dandelion Sprout's Anti Push Notifications](https://adguardteam.github.io/HostlistsRegistry/assets/filter_39.txt)
 - [Dandelion Sprout's Game Console Adblock List](https://adguardteam.github.io/HostlistsRegistry/assets/filter_6.txt)
 - [Perflyst & Dandelion Sprout's Smart-TV Blocklist](https://adguardteam.github.io/HostlistsRegistry/assets/filter_7.txt)
+- [DynDNS Blocklist](https://adguardteam.github.io/HostlistsRegistry/assets/filter_54.txt)
+- [Encrypted DNS/VPN/TOR/Proxy Bypass](https://adguardteam.github.io/HostlistsRegistry/assets/filter_52.txt)
+- [Anti-Piracy Blocklist](https://adguardteam.github.io/HostlistsRegistry/assets/filter_46.txt)
+- [Fake DNS Blocklist](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/fake.txt)
+- [Pop-Up Ads DNS Blocklist](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/popupads.txt)
 - [KADhosts](https://raw.githubusercontent.com/FiltersHeroes/KADhosts/master/KADhosts.txt)
 - [AdGuard Base Filter](https://filters.adtidy.org/extension/ublock/filters/2_without_easylist.txt)
 - [AdGuard Tracking Protection Filter](https://filters.adtidy.org/extension/ublock/filters/3.txt)
 
 ---
 
-## ✅ ALLOWED
+## ✅ Allowed Domains
+Below is the list of explicitly allowed domains to ensure functionality for essential services:
 
 ### 🎯 Facebook
 - `b-graph-fallback.facebook.com`
@@ -86,4 +85,6 @@
 
 ---
 
-### 🚧 **Please be understanding – the project is under development** 🚧
+## 🚧 Project Status
+This project is currently under development. Please be patient as we implement more features and refine the functionality.
+
