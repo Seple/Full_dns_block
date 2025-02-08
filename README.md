@@ -47,19 +47,15 @@
 
 ## ✅ ALLOWED
 
-### 🎯 Facebook/Messenger App on Android/iOS (comments, messages)
+### 🎯 Facebook
 - `b-graph-fallback.facebook.com`
 - `b-graph.facebook.com`
 - `graph-fallback.facebook.com`
 - `graph.facebook.com`
 - `graph.fbpigeon.com`
 - `z-m-graph.facebook.com`
-
-### 🎯 Facebook Lite App (messages/notifications), Instagram App Settings (slow loading)
 - `web.facebook.com`
 - `web-fallback.facebook.com`
-
-### 🎯 Other Facebook Features, Including Login
 - `connect.facebook.com`
 - `connect.facebook.net`
 - `mqtt-mini.facebook.com`
