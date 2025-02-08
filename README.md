@@ -1,7 +1,7 @@
 <div align="center">
 🛡 FULL DNS BLOCK 🛡
 </div>
-
+<p> </p> 
 <div align="center">🔹 Description 🔹 </div>
 
 This script is designed for users who want maximum control over their network security and privacy by creating an aggressive DNS blocking list.
