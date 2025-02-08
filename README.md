@@ -96,13 +96,4 @@ While this script aggressively blocks unwanted content, the following domains re
 
 ---
 
-### 🚧 **Project Status: Under Development** 🚧
-
-This project is actively being improved. Please be patient and report any issues or suggestions.
-
-🚀 Stay tuned for updates!
-
-
----
-
 ### 🚧 **Please be understanding the project is under development** 🚧
