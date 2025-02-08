@@ -56,6 +56,20 @@ While this script aggressively blocks unwanted content, the following DNS blockl
 - [Dandelion Sprout's Anti Push Notifications](https://adguardteam.github.io/HostlistsRegistry/assets/filter_39.txt)
 - [Dandelion Sprout's Game Console Adblock List](https://adguardteam.github.io/HostlistsRegistry/assets/filter_6.txt)
 - [Perflyst & Dandelion Sprout's Smart-TV Blocklist](https://adguardteam.github.io/HostlistsRegistry/assets/filter_7.txt)
+- [HaGeZi's DynDNS Blocklist](https://adguardteam.github.io/HostlistsRegistry/assets/filter_54.txt)
+- [HaGeZi's Encrypted DNS/VPN/TOR/Proxy Bypass](https://adguardteam.github.io/HostlistsRegistry/assets/filter_52.txt)
+- [Phishing Army](https://adguardteam.github.io/HostlistsRegistry/assets/filter_18.txt)
+- [HaGeZi's Anti-Piracy Blocklist](https://adguardteam.github.io/HostlistsRegistry/assets/filter_46.txt)
+- [HaGeZi's Fake DNS Blocklist](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/fake.txt)
+- [HaGeZi's Pop-Up Ads DNS Blocklist](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/popupads.txt)
+- [KADhosts](https://raw.githubusercontent.com/FiltersHeroes/KADhosts/master/KADhosts.txt)
+- [AdGuard Base Filter](https://filters.adtidy.org/extension/ublock/filters/2_without_easylist.txt)
+- [AdGuard Tracking Protection Filter](https://filters.adtidy.org/extension/ublock/filters/3.txt)
+- [EasyList](https://easylist.to/easylist/easylist.txt)
+- [EasyList Cookie List](https://secure.fanboy.co.nz/fanboy-cookiemonster.txt)
+- [EasyPrivacy](https://easylist.to/easylist/easyprivacy.txt)
+- [Fanboy's Annoyance List](https://secure.fanboy.co.nz/fanboy-annoyance.txt)
+- [Fanboy's Social Blocking List](https://easylist.to/easylist/fanboy-social.txt)
 
 ---
 
