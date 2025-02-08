@@ -2,12 +2,12 @@
 
 ## 🔹 Overview
 
-🚀 This script downloads and processes a collection of DNS blocklists to optimize filtering, reduce redundancy, and enhance blocking efficiency. Perfect for those who want to take full control of their network security! 🔒💻
+This script downloads and processes a collection of DNS blocklists to optimize filtering, reduce redundancy, and enhance blocking efficiency. Perfect for those who want to take full control of their network security! 🔒💻
 
 ---
 
-## 📌 Collection of All Lists Included in This Script
-This script downloads and processes a collection of DNS blocklists to optimize filtering, reduce redundancy, and enhance blocking efficiency.
+## 📌 Collection
+A comprehensive collection of additional blocklists for enhanced protection!
 
 ### 🛡 1Hosts – Various Filtering Levels
 - [1Hosts Mini](https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/mini/adblock.txt)
