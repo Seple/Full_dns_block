@@ -1,5 +1,5 @@
-<div align="center">
-# 🛡 FULL DNS BLOCK 🛡
+# <div align="center">
+🛡 FULL DNS BLOCK 🛡
 </div>
 <p> </p> 
 <div align="center">
