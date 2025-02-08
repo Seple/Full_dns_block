@@ -16,6 +16,11 @@
 - [Pro](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt)
 - [Pro Plus](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.plus.txt)
 - [Ultimate](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/ultimate.txt)
+- [DynDNS Blocklist](https://adguardteam.github.io/HostlistsRegistry/assets/filter_54.txt)
+- [Encrypted DNS/VPN/TOR/Proxy Bypass](https://adguardteam.github.io/HostlistsRegistry/assets/filter_52.txt)
+- [Anti-Piracy Blocklist](https://adguardteam.github.io/HostlistsRegistry/assets/filter_46.txt)
+- [Fake DNS Blocklist](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/fake.txt)
+- [Pop-Up Ads DNS Blocklist](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/popupads.txt)
 
 ### 🛡 OISD – Various Filtering Levels
 - [OISD Basic](https://adguardteam.github.io/HostlistsRegistry/assets/filter_5.txt)
@@ -29,19 +34,23 @@
 - [AWAvenue Ads Rule](https://adguardteam.github.io/HostlistsRegistry/assets/filter_53.txt)
 - [Malicious URL Blocklist (URLHaus)](https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt)
 - [uBlock Filters – Badware Risks](https://adguardteam.github.io/HostlistsRegistry/assets/filter_50.txt)
-- [The Big List of Hacked Malware Web Sites](https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt)
+- [The Big List of Hacked Malware Websites](https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt)
 - [Stalkerware Indicators List](https://adguardteam.github.io/HostlistsRegistry/assets/filter_31.txt)
 - [ShadowWhisperer's Malware List](https://adguardteam.github.io/HostlistsRegistry/assets/filter_42.txt)
 - [Scam Blocklist by DurableNapkin](https://adguardteam.github.io/HostlistsRegistry/assets/filter_10.txt)
 - [NoCoin Filter List](https://adguardteam.github.io/HostlistsRegistry/assets/filter_8.txt)
 - [Dandelion Sprout's Anti-Malware List](https://adguardteam.github.io/HostlistsRegistry/assets/filter_12.txt)
 - [Phishing URL Blocklist (PhishTank & OpenPhish)](https://adguardteam.github.io/HostlistsRegistry/assets/filter_30.txt)
+- [Phishing Army](https://adguardteam.github.io/HostlistsRegistry/assets/filter_18.txt)
 - [POL: Polish Filters for Pi-hole](https://adguardteam.github.io/HostlistsRegistry/assets/filter_14.txt)
 - [POL: CERT Polska List of Malicious Domains](https://adguardteam.github.io/HostlistsRegistry/assets/filter_41.txt)
 - [WindowsSpyBlocker - Hosts Spy Rules](https://adguardteam.github.io/HostlistsRegistry/assets/filter_23.txt)
 - [Dandelion Sprout's Anti Push Notifications](https://adguardteam.github.io/HostlistsRegistry/assets/filter_39.txt)
 - [Dandelion Sprout's Game Console Adblock List](https://adguardteam.github.io/HostlistsRegistry/assets/filter_6.txt)
 - [Perflyst & Dandelion Sprout's Smart-TV Blocklist](https://adguardteam.github.io/HostlistsRegistry/assets/filter_7.txt)
+- [KADhosts](https://raw.githubusercontent.com/FiltersHeroes/KADhosts/master/KADhosts.txt)
+- [AdGuard Base Filter](https://filters.adtidy.org/extension/ublock/filters/2_without_easylist.txt)
+- [AdGuard Tracking Protection Filter](https://filters.adtidy.org/extension/ublock/filters/3.txt)
 
 ---
 
