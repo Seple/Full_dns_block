@@ -78,19 +78,15 @@ urls = [
 
 # Lista wykluczeń
 exclude_list = {
-    # Aplikacja Facebook/Messenger na Androida/iOS (komentarze, wiadomości)
-    # Filmy z historiami aplikacji na Instagramie
+    # Facebook
     "b-graph-fallback.facebook.com",
     "b-graph.facebook.com",
     "graph-fallback.facebook.com",
     "graph.facebook.com",
     "graph.fbpigeon.com",
     "z-m-graph.facebook.com",
-    # Aplikacja Facebook Lite (wiadomości/powiadomienia), ustawienia aplikacji Instagram (wolne ładowanie)
-    # Aplikacja Facebook/Messenger na Androida/iOS (Awatary)
     "web.facebook.com",
     "web-fallback.facebook.com",
-    # Inne funkcje Facebooka, w tym logowanie 
     "connect.facebook.com",
     "connect.facebook.net",
     "mqtt-mini.facebook.com",
