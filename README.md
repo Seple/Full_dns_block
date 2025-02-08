@@ -82,4 +82,4 @@ This script simply automates their retrieval and merging to enhance aggressivene
 
 ---
 
-### 🚧 **Please be understanding – the project is under development** 🚧
+### 🚧 **Please be understanding the project is under development** 🚧
