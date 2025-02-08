@@ -7,15 +7,22 @@ This script does not create its own blocklists. Instead, it relies on publicly a
 All rights to these lists belong to their respective creators❗
 This script simply automates their retrieval and merging to enhance aggressiveness while reducing the final file size for practical use.
 
-## 📌 COLLECTION OF ALL LISTS INCLUDED IN THIS SCRIPT
+
+---
+
+## 📌 Included DNS Blocklists
+
+While this script aggressively blocks unwanted content, the following DNS blocklists have been carefully selected to provide **comprehensive protection** against ads, trackers, malware, and other malicious domains. These lists are sourced from reputable providers and regularly updated to ensure optimal security.
 
 ### 🛡 1Hosts – Various Filtering Levels
+
 - [1Hosts Mini](https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/mini/adblock.txt)
 - [1Hosts Lite](https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/Lite/adblock.txt)
 - [1Hosts Pro](https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/Pro/adblock.txt)
 - [1Hosts Xtra](https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/Xtra/adblock.txt)
 
 ### 🛡 HaGeZi – Various Filtering Levels
+
 - [Light](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt)
 - [Multi](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/multi.txt)
 - [Pro](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt)
@@ -23,10 +30,12 @@ This script simply automates their retrieval and merging to enhance aggressivene
 - [Ultimate](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/ultimate.txt)
 
 ### 🛡 OISD – Various Filtering Levels
+
 - [OISD Basic](https://adguardteam.github.io/HostlistsRegistry/assets/filter_5.txt)
 - [OISD Full](https://adguardteam.github.io/HostlistsRegistry/assets/filter_27.txt)
 
 ### 🛡 Other Blocking Lists
+
 - [Peter Lowe's Blocklist](https://adguardteam.github.io/HostlistsRegistry/assets/filter_3.txt)
 - [Steven Black's List](https://adguardteam.github.io/HostlistsRegistry/assets/filter_33.txt)
 - [Dan Pollock's List](https://adguardteam.github.io/HostlistsRegistry/assets/filter_4.txt)
@@ -50,9 +59,12 @@ This script simply automates their retrieval and merging to enhance aggressivene
 
 ---
 
-## ✅ ALLOWED
+## ✅ Allowed Domains
+
+While this script aggressively blocks unwanted content, the following domains remain **whitelisted** to ensure proper functionality of essential services:
 
 ### 🎯 Facebook
+
 - `b-graph-fallback.facebook.com`
 - `b-graph.facebook.com`
 - `graph-fallback.facebook.com`
@@ -66,6 +78,7 @@ This script simply automates their retrieval and merging to enhance aggressivene
 - `mqtt-mini.facebook.com`
 
 ### 🎮 Games and Android Apps
+
 - `mycafe.games`
 - `tinyco.com`
 - `shephertz.com`
@@ -78,7 +91,17 @@ This script simply automates their retrieval and merging to enhance aggressivene
 - `weathercn.com`
 
 ### 🔍 Google
+
 - `googletagmanager.com`
+
+---
+
+### 🚧 **Project Status: Under Development** 🚧
+
+This project is actively being improved. Please be patient and report any issues or suggestions.
+
+🚀 Stay tuned for updates!
+
 
 ---
 
