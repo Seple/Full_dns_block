@@ -1,6 +1,6 @@
 # 🛡 FULL DNS BLOCK 🛡
 
-Description: This script is designed for users who want maximum control over their network security and privacy by creating an aggressive DNS blocking list. It automatically fetches and merges multiple DNS blocklists to provide strong protection against ads, trackers, malware, phishing sites, and other unwanted domains. 
+This script is designed for users who want maximum control over their network security and privacy by creating an aggressive DNS blocking list. It automatically fetches and merges multiple DNS blocklists to provide strong protection against ads, trackers, malware, phishing sites, and other unwanted domains. 
 Perfect for users who want to take full control of their network security 🔒💻
 # ⚠️ Important ⚠️
 This script does not create its own blocklists. Instead, it relies on publicly available lists maintained by external authors.
