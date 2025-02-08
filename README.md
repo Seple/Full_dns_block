@@ -1,4 +1,8 @@
-# ✨🛡 Full DNS Block 🛡✨
+<div align="center">
+
+# 🛡 Full DNS Block 🛡
+
+</div>
 
 ## 🔹 Description
 
