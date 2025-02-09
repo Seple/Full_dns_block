@@ -113,7 +113,7 @@ exclude_list = {
     "candivore.com",
     "salusconnect.io",
     "v-speed.eu",
-    "error.pl",
+    "livechatinc.com",
     "error2.pl",
     # Google
     "googletagmanager.com",
