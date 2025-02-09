@@ -65,11 +65,7 @@ While this script aggressively blocks unwanted content, the following DNS blockl
 - [KADhosts](https://raw.githubusercontent.com/FiltersHeroes/KADhosts/master/KADhosts.txt)
 - [AdGuard Base Filter](https://filters.adtidy.org/extension/ublock/filters/2_without_easylist.txt)
 - [AdGuard Tracking Protection Filter](https://filters.adtidy.org/extension/ublock/filters/3.txt)
-- [EasyList](https://easylist.to/easylist/easylist.txt)
-- [EasyList Cookie List](https://secure.fanboy.co.nz/fanboy-cookiemonster.txt)
 - [EasyPrivacy](https://easylist.to/easylist/easyprivacy.txt)
-- [Fanboy's Annoyance List](https://secure.fanboy.co.nz/fanboy-annoyance.txt)
-- [Fanboy's Social Blocking List](https://easylist.to/easylist/fanboy-social.txt)
 
 ---
 
