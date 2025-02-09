@@ -76,10 +76,6 @@ urls = [
     "https://raw.githubusercontent.com/FiltersHeroes/KADhosts/master/KADhosts.txt",
     # AdGuard Base filter
     "https://filters.adtidy.org/extension/ublock/filters/2_without_easylist.txt",
-    # AdGuard Tracking Protection filter
-    "https://filters.adtidy.org/extension/ublock/filters/3.txt",
-    # EasyPrivacy
-    "https://easylist.to/easylist/easyprivacy.txt",
 ]
 
 # Lista wykluczeń
