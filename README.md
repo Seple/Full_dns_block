@@ -101,8 +101,8 @@ While this script aggressively blocks unwanted content, the following domains re
 - `candivore.com`
 - `salusconnect.io`
 - `v-speed.eu`
-- `.schwarz`
-- `weathercn.com`
+- `livechatinc.com`
+- `error2.XX`
 
 ### 🔍 Google
 
