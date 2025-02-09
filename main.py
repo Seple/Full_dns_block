@@ -114,7 +114,7 @@ exclude_list = {
     "salusconnect.io",
     "v-speed.eu",
     "error.pl",
-    "weathercn.com",
+    "error2.pl",
     # Google
     "googletagmanager.com",
 }
