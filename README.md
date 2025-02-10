@@ -43,7 +43,6 @@ While this script aggressively blocks unwanted content, the following DNS blockl
 - [AWAvenue Ads Rule](https://adguardteam.github.io/HostlistsRegistry/assets/filter_53.txt)
 - [Malicious URL Blocklist (URLHaus)](https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt)
 - [uBlock Filters – Badware Risks](https://adguardteam.github.io/HostlistsRegistry/assets/filter_50.txt)
-- [The Big List of Hacked Malware Web Sites](https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt)
 - [Stalkerware Indicators List](https://adguardteam.github.io/HostlistsRegistry/assets/filter_31.txt)
 - [ShadowWhisperer's Malware List](https://adguardteam.github.io/HostlistsRegistry/assets/filter_42.txt)
 - [Scam Blocklist by DurableNapkin](https://adguardteam.github.io/HostlistsRegistry/assets/filter_10.txt)
