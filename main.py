@@ -101,9 +101,10 @@ exclude_list = {
     "salusconnect.io",
     "v-speed.eu",
     "livechatinc.com",
-    "error2.pl",
+    "cssott.com",
+    "leaflets.schwarz",
     # Google
-    "googletagmanager.com",
+    "error222.com",
 }
 
 # Pliki wynikowe
