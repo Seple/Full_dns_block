@@ -34,8 +34,6 @@ urls = [
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt",
     # uBlock filters – Badware risks
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_50.txt",
-    # The Big List of Hacked Malware Web Sites
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt",
     # Stalkerware Indicators List
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_31.txt",
     # ShadowWhisperer's Malware List
