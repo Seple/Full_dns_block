@@ -103,6 +103,7 @@ exclude_list = {
     "livechatinc.com",
     "cssott.com",
     "leaflets.schwarz",
+    "assets.schwarz",
     # Google
     "error222.com",
 }
