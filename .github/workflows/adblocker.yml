@@ -2,7 +2,7 @@ name: Generate AdBlock List
 
 on:
   schedule:
-    - cron: '0 */8 * * *'  # Co 8 godziny o pełnej godzinie
+    - cron: '0 */3 * * *'  # Co 3 godziny o pełnej godzinie
   workflow_dispatch:  # Możliwość ręcznego uruchomienia
 
 jobs:
