@@ -3,6 +3,7 @@ import os
 import shutil
 import concurrent.futures
 import datetime
+import re
 
 # Linki do pobrania list
 urls = [
@@ -110,10 +111,24 @@ output_file = "Full_DNS_Block.txt"
 backup_file = "Backup_Full_DNS_Block.txt"
 temp_file = output_file + ".tmp"
 
+# Wyrażenia regularne do sprawdzania poprawności wpisów
+valid_patterns = [
+    r"^0\.0\.0\.0\s+(\S+)$",  # 0.0.0.0 example.com → example.com
+    r"^127\.0\.0\.1\s+(\S+)$",  # 127.0.0.1 example.com → example.com
+    r"^\|\|([a-zA-Z0-9.-]+)\^$",  # ||example.com^ (już w poprawnym formacie)
+    r"^([a-zA-Z0-9.-]+)$"  # example.com (samotna domena)
+]
+
 def generate_header():
-    """Tworzy komentarz z datą i liczbą reguł"""
     timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    return f"[Adblock Plus] \n! Title: Full_DNS_Block \n! Description: Linked lists to reduce size \n! Homepage: https://github.com/Seple/Full_DNS_Block \n! Last modified: {timestamp} \n! Number of entries: {len(all_rules)} \n\n"
+    return f"""[Adblock Plus] 
+! Title: Full_DNS_Block 
+! Description: Linked lists to reduce size 
+! Homepage: https://github.com/Seple/Full_DNS_Block 
+! Last modified: {timestamp} 
+! Number of entries: {len(all_rules)} 
+
+"""  
 
 def fetch_list(url, retries=3):
     for _ in range(retries):
@@ -128,6 +143,19 @@ def fetch_list(url, retries=3):
     print(f"❌ Nie udało się pobrać: {url}")
     return []
 
+def remove_subdomains(domains):
+    sorted_domains = sorted(domains, key=lambda d: d.count('.'))  # Sortowanie wg liczby członów
+    filtered_domains = set()
+    
+    for domain in sorted_domains:
+        main_domain = domain.lstrip("||").rstrip("^")  # Usunięcie || i ^
+        parts = main_domain.split('.')
+        
+        if not any(f"||{'.'.join(parts[i:])}^" in filtered_domains for i in range(1, len(parts))):
+            filtered_domains.add(domain)
+    
+    return filtered_domains
+
 all_rules = set()
 total_downloaded = 0
 
@@ -138,20 +166,31 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
         total_downloaded += len(lines)
         for line in lines:
             line = line.strip()
-            if line.startswith("0.0.0.0") or line.startswith("127.0.0.1"):
-                parts = line.split()
-                if len(parts) == 2:
-                    rule = f"||{parts[1]}^"
-                else:
-                    continue
-            elif line.startswith("||") and line.endswith("^"):
-                rule = line
-            else:
+            
+            # Ignorowanie pustych linii oraz komentarzy
+            if not line or line.startswith(('-', '.', '!', '#')):
                 continue
             
+            # Dopasowanie do jednego z wyrażeń regularnych
+            matched = False
+            for pattern in valid_patterns:
+                match = re.match(pattern, line)
+                if match:
+                    domain = match.group(1)
+                    rule = f"||{domain}^"
+                    matched = True
+                    break
+            
+            if not matched:
+                continue  # Pominięcie wpisu, jeśli nie pasuje do żadnego wzorca
+            
+            # Sprawdzenie, czy domena nie znajduje się na liście wykluczeń
             domain_only = rule[2:-1]
             if not any(domain_only.endswith(f".{excluded}") or domain_only == excluded for excluded in exclude_list):
                 all_rules.add(rule)
+
+# Usuwanie zbędnych subdomen
+all_rules = remove_subdomains(all_rules)
 
 removed_rules = total_downloaded - len(all_rules)
 
@@ -168,7 +207,6 @@ try:
             f.write(rule + "\n")
     os.replace(temp_file, output_file)
     print(f"✅ Nowa lista zapisana w {output_file}")
-    print(f"📊 Podsumowanie: Pobranie: {total_downloaded} reguł, Usunięte (duplikaty i subdomeny): {removed_rules} reguł, Pozostałe unikalne po usunięciu duplikatów i subdomen: {len(all_rules)} reguł")
+    print(f"📊 Podsumowanie: Pobranie: {total_downloaded} reguł, Usunięte (duplikaty i subdomeny): {removed_rules} reguł, Pozostałe unikalne: {len(all_rules)} reguł")
 except Exception as e:
     print(f"❌ Błąd zapisu pliku: {e}")
-    
