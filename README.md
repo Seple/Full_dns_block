@@ -65,6 +65,15 @@ While this script aggressively blocks unwanted content, the following DNS blockl
 - [AdGuard Base Filter](https://filters.adtidy.org/extension/ublock/filters/2_without_easylist.txt)
 - [AdGuard Tracking Protection Filter](https://filters.adtidy.org/extension/ublock/filters/3.txt)
 - [EasyPrivacy](https://easylist.to/easylist/easyprivacy.txt)
+- [EasyList](https://easylist.to/easylist/easylist.txt)
+- [EasyList Cookie List](https://secure.fanboy.co.nz/fanboy-cookiemonster.txt)
+- [Fanboy's Annoyance List](https://secure.fanboy.co.nz/fanboy-annoyance.txt)
+- [Fanboy's Social Blocking List](https://easylist.to/easylist/fanboy-social.txt)
+- [HaGeZi's Badware Hoster DNS Blocklist](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/hoster.txt)
+- [HaGeZi's SafeSearch Not Supported DNS Blocklist](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/nosafesearch.txt)
+- [HaGeZi's The World's Most Abused TLDs](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/nosafesearch.txt)
+- [Native Tracker](https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/nosafesearch.txt)
+
 
 ---
 
