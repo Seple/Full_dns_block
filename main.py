@@ -93,9 +93,9 @@ urls = [
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/nosafesearch.txt",
     # HaGeZi's The World's Most Abused TLDs
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-adblock.txt",
-        # HaGeZi's Threat Intelligence Feeds DNS Blocklist
+    # HaGeZi's Threat Intelligence Feeds DNS Blocklist
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt",
-        # Native Tracker
+    # Native Tracker
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/nosafesearch.txt",
 ]
 
