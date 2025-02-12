@@ -4,6 +4,7 @@ import shutil
 import concurrent.futures
 import datetime
 import re
+from collections import defaultdict
 
 # Linki do pobrania list
 urls = [
@@ -100,7 +101,7 @@ urls = [
 ]
 
 # Lista wykluczeń
-exclude_list = {
+exclude_list = [
     # Facebook
     "b-graph-fallback.facebook.com",
     "b-graph.facebook.com",
@@ -132,19 +133,30 @@ exclude_list = {
     "biedronka.cloud",
     "biedronka.cloud",
     "biedronka.cloud",
-}
+]
+
+# Lista ważnych domen, które nie powinny być optymalizowane
+important_domains = [
+    "google.com", "facebook.com", "microsoft.com", "apple.com",
+]
 
 # Pliki wynikowe
 output_file = "Full_DNS_Block.txt"
 backup_file = "Backup_Full_DNS_Block.txt"
 temp_file = output_file + ".tmp"
+optimization_suggestions_file = "Optimization_suggestion.txt"
+
+# Minimalna liczba subdomen do zgłoszenia sugestii
+subdomain_threshold = 5
 
 # Wyrażenia regularne do sprawdzania poprawności wpisów
 valid_patterns = [
-    r"^0\.0\.0\.0\s+(\S+)$",  # 0.0.0.0 example.com → example.com
-    r"^127\.0\.0\.1\s+(\S+)$",  # 127.0.0.1 example.com → example.com
-    r"^\|\|([a-zA-Z0-9.-]+)\^$",  # ||example.com^ (już w poprawnym formacie)
-    r"^([a-zA-Z0-9.-]+)$"  # example.com (samotna domena)
+    r"^0\.0\.0\.0\s+([\w.-]+)$",  # 0.0.0.0 example.com
+    r"^127\.0\.0\.1\s+([\w.-]+)$",  # 127.0.0.1 example.com
+    r"^\|\|([\w.-]+)\^$",  # ||example.com^ (format uBlock/Adblock)
+    r"^([\w.-]+)$",  # example.com (pojedyncza domena)
+    r"^\*\.([\w.-]+)$",  # *.example.com (wildcard subdomen)
+    r"^\|\|(\*\.[\w.-]+)\^$",  # ||*.example.com^ (wildcard w uBlock)
 ]
 
 def generate_header():
@@ -159,7 +171,7 @@ def generate_header():
 """  
 
 def fetch_list(url, retries=3):
-    for _ in range(retries):
+    for attempt in range(retries):
         try:
             response = requests.get(url, timeout=10)
             response.raise_for_status()
@@ -167,22 +179,43 @@ def fetch_list(url, retries=3):
             print(f"✅ Pobrano: {url} ({len(lines)} reguł)")
             return lines
         except requests.exceptions.RequestException as e:
-            print(f"⚠️ Błąd pobierania {url}: {e}")
+            print(f"⚠️ Błąd pobierania {url} (próba {attempt+1}/{retries}): {e}")
     print(f"❌ Nie udało się pobrać: {url}")
     return []
 
 def remove_subdomains(domains):
-    sorted_domains = sorted(domains, key=lambda d: d.count('.'))  # Sortowanie wg liczby członów
     filtered_domains = set()
     
-    for domain in sorted_domains:
-        main_domain = domain.lstrip("||").rstrip("^")  # Usunięcie || i ^
-        parts = main_domain.split('.')
+    for domain in sorted(domains, key=lambda d: d.count('.')):
+        clean_domain = domain.lstrip("||").rstrip("^")
+        parts = clean_domain.split('.')
         
         if not any(f"||{'.'.join(parts[i:])}^" in filtered_domains for i in range(1, len(parts))):
-            filtered_domains.add(domain)
+            filtered_domains.add(f"||{clean_domain}^")
     
     return filtered_domains
+
+def generate_optimization_suggestions(domains):
+    domain_map = defaultdict(int)
+    
+    for domain in domains:
+        clean_domain = domain.lstrip("||").rstrip("^")
+        parts = clean_domain.split('.')
+        if len(parts) > 2:
+            main_domain = '.'.join(parts[-2:])
+            domain_map[main_domain] += 1
+    
+    sorted_domains = sorted(domain_map.items(), key=lambda x: x[1], reverse=True)
+    total_savings = sum(count - 1 for domain, count in sorted_domains if count >= subdomain_threshold and domain not in important_domains)
+
+    if sorted_domains:
+        with open(optimization_suggestions_file, "w", encoding="utf-8") as f:
+            f.write("! Sugestie optymalizacji domen (do ręcznej analizy)\n\n")
+            for main_domain, count in sorted_domains:
+                if count >= subdomain_threshold and main_domain not in important_domains:
+                    f.write(f"||{main_domain}^   # ({count})\n")
+            f.write(f"\n! Potencjalna oszczędność: {total_savings} reguł\n")
+        print(f"✅ Wygenerowano sugestie optymalizacji w {optimization_suggestions_file}")
 
 all_rules = set()
 total_downloaded = 0
@@ -195,11 +228,9 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
         for line in lines:
             line = line.strip()
             
-            # Ignorowanie pustych linii oraz komentarzy
             if not line or line.startswith(('-', '.', '!', '#')):
                 continue
             
-            # Dopasowanie do jednego z wyrażeń regularnych
             matched = False
             for pattern in valid_patterns:
                 match = re.match(pattern, line)
@@ -210,31 +241,29 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
                     break
             
             if not matched:
-                continue  # Pominięcie wpisu, jeśli nie pasuje do żadnego wzorca
+                continue
             
-            # Sprawdzenie, czy domena nie znajduje się na liście wykluczeń
             domain_only = rule[2:-1]
             if not any(domain_only.endswith(f".{excluded}") or domain_only == excluded for excluded in exclude_list):
                 all_rules.add(rule)
 
-# Usuwanie zbędnych subdomen
 all_rules = remove_subdomains(all_rules)
-
 removed_rules = total_downloaded - len(all_rules)
 
-# Tworzenie kopii zapasowej
 if os.path.exists(output_file):
+    if os.path.exists(backup_file):
+        os.remove(backup_file)
     shutil.copy(output_file, backup_file)
     print(f"🔄 Utworzono kopię zapasową: {backup_file}")
 
-# Zapis listy z nagłówkiem
 try:
     with open(temp_file, "w", encoding="utf-8") as f:
         f.write(generate_header())
-        for rule in sorted(all_rules):
-            f.write(rule + "\n")
+        f.writelines(f"{rule}\n" for rule in sorted(all_rules))
     os.replace(temp_file, output_file)
     print(f"✅ Nowa lista zapisana w {output_file}")
-    print(f"📊 Podsumowanie: Pobranie: {total_downloaded} reguł, Usunięte (duplikaty i subdomeny): {removed_rules} reguł, Pozostałe unikalne: {len(all_rules)} reguł")
+    print(f"📊 Pobranie: {total_downloaded} reguł, Usunięte: {removed_rules}, Pozostałe: {len(all_rules)}")
+    
+    generate_optimization_suggestions(all_rules)
 except Exception as e:
     print(f"❌ Błąd zapisu pliku: {e}")
