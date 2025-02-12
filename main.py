@@ -127,8 +127,9 @@ exclude_list = {
     "leaflets.schwarz",
     "assets.schwarz",
     "boltsvc.net",
-    # Google
-    "error222.com",
+    "weathercn.com",
+    "weathercn.com",
+    "weathercn.com",
 }
 
 # Pliki wynikowe
