@@ -213,7 +213,7 @@ def generate_optimization_suggestions(domains):
             f.write("! Sugestie optymalizacji domen (do ręcznej analizy)\n\n")
             for main_domain, count in sorted_domains:
                 if count >= subdomain_threshold and main_domain not in important_domains:
-                    f.write(f"||{main_domain}^   # ({count})\n")
+                    f.write(f"||{main_domain}^\n")
             f.write(f"\n! Potencjalna oszczędność: {total_savings} reguł\n")
         print(f"✅ Wygenerowano sugestie optymalizacji w {optimization_suggestions_file}")
 
