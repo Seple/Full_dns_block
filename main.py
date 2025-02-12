@@ -137,7 +137,7 @@ exclude_list = [
 
 # Lista ważnych domen, które nie powinny być optymalizowane
 important_domains = [
-    "google.com", "facebook.com", "microsoft.com", "apple.com",
+    "google.com", "facebook.com", "microsoft.com", "windows.com", "warszawa.pl", "info.pl", "tiktokv.com", "amazon.com", "net.pl", "waw.pl", "amazonaws.com", "com.pl", "github.com",
 ]
 
 # Pliki wynikowe
@@ -147,7 +147,7 @@ temp_file = output_file + ".tmp"
 optimization_suggestions_file = "Optimization_suggestion.txt"
 
 # Minimalna liczba subdomen do zgłoszenia sugestii
-subdomain_threshold = 5
+subdomain_threshold = 100
 
 # Wyrażenia regularne do sprawdzania poprawności wpisów
 valid_patterns = [
