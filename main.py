@@ -97,7 +97,7 @@ urls = [
     # HaGeZi's Threat Intelligence Feeds DNS Blocklist
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt",
     # Native Tracker
-    "https://raw.githubusercontent.com/Seple/Full_DNS_Block/refs/heads/main/OPT.txt",
+    "https://easylist.to/easylist/fanboy-social.txt",
 ]
 
 # Lista wykluczeń
