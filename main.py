@@ -124,7 +124,7 @@ exclude_list = {
     "cssott.com",
     "leaflets.schwarz",
     "assets.schwarz",
-    "user.live.boltsvc.net",
+    "boltsvc.net",
     # Google
     "error222.com",
 }
