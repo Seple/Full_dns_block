@@ -128,8 +128,10 @@ exclude_list = {
     "assets.schwarz",
     "boltsvc.net",
     "weathercn.com",
-    "weathercn.com",
-    "weathercn.com",
+    "helios.pl",
+    "biedronka.cloud",
+    "biedronka.cloud",
+    "biedronka.cloud",
 }
 
 # Pliki wynikowe
