@@ -26,8 +26,8 @@
 ||co.kr^
 ||my.id^
 ||com.mx^
-||b-cdn.net^
 ||sa.com^
+||b-cdn.net^
 ||com.de^
 ||com.ar^
 ||studio.site^
@@ -59,10 +59,10 @@
 ||teachable.com^
 ||com.tw^
 ||replit.app^
-||github.io^
 ||com.pk^
 ||adobe.com^
 ||org.uk^
+||github.io^
 ||co.ke^
 ||com.sg^
 ||edgekey.net^
@@ -70,21 +70,21 @@
 ||aliyuncs.com^
 ||com.hk^
 ||mystrikingly.com^
-||web.id^
 ||firebaseio.com^
 ||kortfilmfestivalen.no^
 ||telekom.hu^
 ||framer.app^
+||web.id^
 ||co.cc^
 ||myshopify.com^
 ||entekpartners.com^
-||ne.jp^
 ||twojedom.pl^
+||ne.jp^
 ||biz.id^
 ||miui.com^
 ||kwistasuzk.pl^
-||wurp.pl^
 ||com.pe^
+||wurp.pl^
 ||rima-tde.net^
 ||co.th^
 ||free.fr^
@@ -92,11 +92,11 @@
 ||owps.pl^
 ||sklep.pl^
 ||com.bd^
-||taobao.com^
 ||llnw.net^
 ||magdach.pl^
+||taobao.com^
 ||jouwauhesurvey.top^
 ||firecantrade.site^
 ||b2bmktg.com^
 
-! Potencjalna oszczędność: 89762 reguł
+! Potencjalna oszczędność: 89534 reguł
