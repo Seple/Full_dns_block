@@ -67,11 +67,11 @@
 ||com.sg^
 ||edgekey.net^
 ||akamaihd.net^
-||aliyuncs.com^
 ||com.hk^
+||aliyuncs.com^
 ||mystrikingly.com^
-||firebaseio.com^
 ||web.id^
+||firebaseio.com^
 ||kortfilmfestivalen.no^
 ||telekom.hu^
 ||framer.app^
@@ -79,24 +79,24 @@
 ||myshopify.com^
 ||entekpartners.com^
 ||ne.jp^
-||twojedom.pl^
 ||biz.id^
+||twojedom.pl^
 ||miui.com^
-||wurp.pl^
 ||kwistasuzk.pl^
+||wurp.pl^
 ||com.pe^
 ||rima-tde.net^
 ||co.th^
-||free.fr^
 ||serswise.pl^
+||free.fr^
 ||owps.pl^
 ||sklep.pl^
 ||com.bd^
-||magdach.pl^
 ||llnw.net^
+||magdach.pl^
 ||taobao.com^
 ||jouwauhesurvey.top^
 ||b2bmktg.com^
 ||firecantrade.site^
 
-! Potencjalna oszczędność: 89713 reguł
+! Potencjalna oszczędność: 89761 reguł
