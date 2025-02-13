@@ -67,8 +67,8 @@
 ||com.sg^
 ||edgekey.net^
 ||akamaihd.net^
-||aliyuncs.com^
 ||com.hk^
+||aliyuncs.com^
 ||mystrikingly.com^
 ||firebaseio.com^
 ||kortfilmfestivalen.no^
@@ -82,21 +82,21 @@
 ||ne.jp^
 ||biz.id^
 ||miui.com^
-||kwistasuzk.pl^
-||com.pe^
 ||wurp.pl^
+||com.pe^
+||kwistasuzk.pl^
 ||rima-tde.net^
 ||co.th^
-||free.fr^
 ||serswise.pl^
+||free.fr^
 ||owps.pl^
 ||sklep.pl^
 ||com.bd^
 ||llnw.net^
-||magdach.pl^
 ||taobao.com^
+||magdach.pl^
 ||jouwauhesurvey.top^
-||firecantrade.site^
 ||b2bmktg.com^
+||firecantrade.site^
 
-! Potencjalna oszczędność: 89534 reguł
+! Potencjalna oszczędność: 89540 reguł
