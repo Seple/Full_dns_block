@@ -47,20 +47,20 @@
 ||co.id^
 ||surge.sh^
 ||plesk.page^
-||nazwa.pl^
 ||eu.org^
+||nazwa.pl^
 ||xiaomi.com^
 ||brizy.site^
 ||backblazeb2.com^
+||us.kg^
 ||com.my^
 ||herokuapp.com^
-||us.kg^
 ||paidtomoney.com^
 ||teachable.com^
 ||com.tw^
 ||replit.app^
-||com.pk^
 ||org.uk^
+||com.pk^
 ||adobe.com^
 ||co.ke^
 ||com.sg^
@@ -77,26 +77,26 @@
 ||telekom.hu^
 ||myshopify.com^
 ||entekpartners.com^
-||twojedom.pl^
 ||ne.jp^
+||twojedom.pl^
 ||biz.id^
 ||miui.com^
-||kwistasuzk.pl^
 ||wurp.pl^
+||kwistasuzk.pl^
 ||com.pe^
 ||rima-tde.net^
+||github.io^
+||co.th^
 ||free.fr^
 ||serswise.pl^
-||co.th^
 ||owps.pl^
 ||sklep.pl^
 ||com.bd^
 ||llnw.net^
-||magdach.pl^
 ||taobao.com^
+||magdach.pl^
 ||jouwauhesurvey.top^
-||github.io^
-||firecantrade.site^
 ||b2bmktg.com^
+||firecantrade.site^
 
-! Potencjalna oszczędność: 88481 reguł
+! Potencjalna oszczędność: 88558 reguł
