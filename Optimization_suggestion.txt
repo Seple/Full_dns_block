@@ -52,8 +52,8 @@
 ||nazwa.pl^
 ||xiaomi.com^
 ||brizy.site^
-||backblazeb2.com^
 ||com.my^
+||backblazeb2.com^
 ||us.kg^
 ||paidtomoney.com^
 ||teachable.com^
@@ -74,29 +74,29 @@
 ||kortfilmfestivalen.no^
 ||framer.app^
 ||web.id^
-||telekom.hu^
 ||co.cc^
+||telekom.hu^
 ||myshopify.com^
 ||entekpartners.com^
 ||twojedom.pl^
 ||ne.jp^
 ||biz.id^
 ||miui.com^
+||com.pe^
 ||kwistasuzk.pl^
 ||wurp.pl^
-||com.pe^
 ||rima-tde.net^
 ||co.th^
-||free.fr^
 ||serswise.pl^
+||free.fr^
 ||owps.pl^
 ||sklep.pl^
 ||com.bd^
-||llnw.net^
 ||magdach.pl^
 ||taobao.com^
+||llnw.net^
 ||jouwauhesurvey.top^
 ||b2bmktg.com^
 ||firecantrade.site^
 
-! Potencjalna oszczędność: 89687 reguł
+! Potencjalna oszczędność: 89689 reguł
