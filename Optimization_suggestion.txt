@@ -52,8 +52,8 @@
 ||eu.org^
 ||xiaomi.com^
 ||brizy.site^
-||com.my^
 ||backblazeb2.com^
+||com.my^
 ||us.kg^
 ||paidtomoney.com^
 ||teachable.com^
@@ -78,25 +78,25 @@
 ||telekom.hu^
 ||myshopify.com^
 ||entekpartners.com^
-||twojedom.pl^
 ||ne.jp^
+||twojedom.pl^
 ||biz.id^
 ||miui.com^
-||wurp.pl^
-||com.pe^
 ||kwistasuzk.pl^
+||com.pe^
+||wurp.pl^
 ||rima-tde.net^
 ||co.th^
-||free.fr^
 ||serswise.pl^
+||free.fr^
 ||owps.pl^
 ||sklep.pl^
 ||com.bd^
 ||llnw.net^
-||magdach.pl^
 ||taobao.com^
+||magdach.pl^
 ||jouwauhesurvey.top^
 ||b2bmktg.com^
 ||firecantrade.site^
 
-! Potencjalna oszczędność: 89690 reguł
+! Potencjalna oszczędność: 89687 reguł
