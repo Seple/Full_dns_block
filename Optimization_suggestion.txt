@@ -59,8 +59,8 @@
 ||teachable.com^
 ||com.tw^
 ||replit.app^
-||org.uk^
 ||com.pk^
+||org.uk^
 ||adobe.com^
 ||co.ke^
 ||com.sg^
@@ -77,12 +77,12 @@
 ||telekom.hu^
 ||myshopify.com^
 ||entekpartners.com^
-||ne.jp^
 ||twojedom.pl^
+||ne.jp^
 ||biz.id^
 ||miui.com^
-||wurp.pl^
 ||kwistasuzk.pl^
+||wurp.pl^
 ||com.pe^
 ||rima-tde.net^
 ||github.io^
@@ -92,11 +92,11 @@
 ||owps.pl^
 ||sklep.pl^
 ||com.bd^
-||llnw.net^
 ||taobao.com^
 ||magdach.pl^
+||llnw.net^
 ||jouwauhesurvey.top^
-||b2bmktg.com^
 ||firecantrade.site^
+||b2bmktg.com^
 
 ! Potencjalna oszczędność: 88558 reguł
