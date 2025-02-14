@@ -72,31 +72,31 @@
 ||firebaseio.com^
 ||kortfilmfestivalen.no^
 ||framer.app^
-||co.cc^
 ||web.id^
+||co.cc^
 ||telekom.hu^
 ||myshopify.com^
 ||entekpartners.com^
-||ne.jp^
 ||twojedom.pl^
+||ne.jp^
 ||biz.id^
 ||miui.com^
-||wurp.pl^
 ||kwistasuzk.pl^
+||wurp.pl^
 ||com.pe^
 ||rima-tde.net^
 ||free.fr^
-||co.th^
 ||serswise.pl^
+||co.th^
 ||owps.pl^
 ||sklep.pl^
 ||com.bd^
 ||llnw.net^
-||taobao.com^
 ||magdach.pl^
+||taobao.com^
 ||jouwauhesurvey.top^
 ||github.io^
-||b2bmktg.com^
 ||firecantrade.site^
+||b2bmktg.com^
 
 ! Potencjalna oszczędność: 88481 reguł
