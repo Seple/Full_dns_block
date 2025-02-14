@@ -26,14 +26,13 @@
 ||co.kr^
 ||my.id^
 ||com.mx^
+||com.de^
 ||sa.com^
 ||b-cdn.net^
-||com.de^
 ||com.ar^
 ||studio.site^
 ||us.com^
 ||azurewebsites.net^
-||herokuapp.com^
 ||co.nz^
 ||jdhs.pl^
 ||com.co^
@@ -43,22 +42,22 @@
 ||za.com^
 ||myvzw.com^
 ||com.vn^
-||plesk.page^
 ||com.ng^
 ||nmdj.pl^
 ||co.id^
 ||surge.sh^
+||plesk.page^
 ||nazwa.pl^
 ||eu.org^
 ||xiaomi.com^
 ||brizy.site^
 ||backblazeb2.com^
 ||com.my^
+||herokuapp.com^
 ||us.kg^
 ||paidtomoney.com^
 ||teachable.com^
 ||com.tw^
-||github.io^
 ||replit.app^
 ||com.pk^
 ||org.uk^
@@ -67,14 +66,14 @@
 ||com.sg^
 ||edgekey.net^
 ||akamaihd.net^
-||aliyuncs.com^
 ||com.hk^
+||aliyuncs.com^
 ||mystrikingly.com^
 ||firebaseio.com^
 ||kortfilmfestivalen.no^
 ||framer.app^
-||web.id^
 ||co.cc^
+||web.id^
 ||telekom.hu^
 ||myshopify.com^
 ||entekpartners.com^
@@ -82,13 +81,13 @@
 ||twojedom.pl^
 ||biz.id^
 ||miui.com^
+||wurp.pl^
 ||kwistasuzk.pl^
 ||com.pe^
-||wurp.pl^
 ||rima-tde.net^
+||free.fr^
 ||co.th^
 ||serswise.pl^
-||free.fr^
 ||owps.pl^
 ||sklep.pl^
 ||com.bd^
@@ -96,7 +95,8 @@
 ||taobao.com^
 ||magdach.pl^
 ||jouwauhesurvey.top^
+||github.io^
 ||b2bmktg.com^
 ||firecantrade.site^
 
-! Potencjalna oszczędność: 89687 reguł
+! Potencjalna oszczędność: 88481 reguł
