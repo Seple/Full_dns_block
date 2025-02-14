@@ -48,8 +48,8 @@
 ||nmdj.pl^
 ||co.id^
 ||surge.sh^
-||eu.org^
 ||nazwa.pl^
+||eu.org^
 ||xiaomi.com^
 ||brizy.site^
 ||com.my^
@@ -82,21 +82,21 @@
 ||ne.jp^
 ||biz.id^
 ||miui.com^
+||wurp.pl^
 ||com.pe^
 ||kwistasuzk.pl^
-||wurp.pl^
 ||rima-tde.net^
 ||co.th^
-||serswise.pl^
 ||free.fr^
+||serswise.pl^
 ||owps.pl^
 ||sklep.pl^
 ||com.bd^
+||llnw.net^
 ||magdach.pl^
 ||taobao.com^
-||llnw.net^
 ||jouwauhesurvey.top^
 ||b2bmktg.com^
 ||firecantrade.site^
 
-! Potencjalna oszczędność: 89689 reguł
+! Potencjalna oszczędność: 89690 reguł
