@@ -1,26 +1,27 @@
 import requests
-import os
-import shutil
-import concurrent.futures
-import datetime
 import re
+import datetime
+import os
 from collections import defaultdict
 
-# Linki do pobrania list
+# Pliki zawierające listy jako zbiory
+EXCLUDE_LIST_FILE = "Allowed_List.txt"
+NO_OPTIMIZATION_LIST_FILE = "Public_Suffix_List.txt"
+
+# Nazwy plików wyjściowych
+OUTPUT_FILE = "Full_DNS_Block.txt"
+OPTIMIZATION_LOG_FILE = "Optimization_suggestion.txt"
+
+# Stała wartość progu subdomen
+THRESHOLD = 1000
+
+# Lista URLi do pobrania (można edytować w pliku zewnętrznym)
 urls = [
     # 1Hosts - Różne poziomy filtracji
-    "https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/mini/adblock.txt",
-    "https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/Lite/adblock.txt",
-    "https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/Pro/adblock.txt",
     "https://raw.githubusercontent.com/badmojr/1Hosts/refs/heads/master/Xtra/adblock.txt",
     # Hagezi - Różne poziomy filtracji
-    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt",
-    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/multi.txt",
-    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt",
-    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.plus.txt",
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/ultimate.txt",
     # OISD - Różne poziomy filtracji
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_5.txt",
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_27.txt",
     # Peter Lowe's Blocklist
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_3.txt",
@@ -68,12 +69,6 @@ urls = [
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_18.txt",
     # HaGeZi's Anti-Piracy Blocklist
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_46.txt",
-    # HaGeZi's Fake DNS Blocklist
-    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/fake.txt",
-    # HaGeZi's Pop-Up Ads DNS Blocklist
-    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/popupads.txt",
-    # KADhosts
-    "https://raw.githubusercontent.com/FiltersHeroes/KADhosts/master/KADhosts.txt",
     # AdGuard Base filter
     "https://filters.adtidy.org/extension/ublock/filters/2_without_easylist.txt",
     # AdGuard Tracking Protection filter
@@ -82,12 +77,8 @@ urls = [
     "https://easylist.to/easylist/easyprivacy.txt",
     # EasyList
     "https://easylist.to/easylist/easylist.txt",
-    # Easylist Cookie List
-    "https://secure.fanboy.co.nz/fanboy-cookiemonster.txt",
     # Fanboy's Annoyance List
     "https://secure.fanboy.co.nz/fanboy-annoyance.txt",
-    # Fanboy's Social Blocking List
-    "https://easylist.to/easylist/fanboy-social.txt",
     # HaGeZi's Badware Hoster DNS Blocklist
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/hoster.txt",
     # HaGeZi's safesearch not supported DNS Blocklist
@@ -96,174 +87,135 @@ urls = [
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/spam-tlds-adblock.txt",
     # HaGeZi's Threat Intelligence Feeds DNS Blocklist
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt",
-    # Native Tracker
-    "https://easylist.to/easylist/fanboy-social.txt",
 ]
 
-# Lista wykluczeń
-exclude_list = [
-    # Facebook
-    "b-graph-fallback.facebook.com",
-    "b-graph.facebook.com",
-    "graph-fallback.facebook.com",
-    "graph.facebook.com",
-    "graph.fbpigeon.com",
-    "z-m-graph.facebook.com",
-    "web.facebook.com",
-    "web-fallback.facebook.com",
-    "connect.facebook.com",
-    "connect.facebook.net",
-    "mqtt-mini.facebook.com",
-    # Gry i Aplikacje Android
-    "mycafe.games",
-    "tinyco.com",
-    "shephertz.com",
-    "hihonorcloud.com",
-    "matchmasters.io",
-    "candivore.com",
-    "salusconnect.io",
-    "v-speed.eu",
-    "livechatinc.com",
-    "cssott.com",
-    "leaflets.schwarz",
-    "assets.schwarz",
-    "boltsvc.net",
-    "weathercn.com",
-    "helios.pl",
-    "biedronka.cloud",
-    "biedronka.cloud",
-    "biedronka.cloud",
-]
 
-# Lista ważnych domen, które nie powinny być optymalizowane
-important_domains = [
-    "google.com", "facebook.com", "microsoft.com", "windows.com", "warszawa.pl", "info.pl", "tiktokv.com", "amazon.com", "net.pl", "waw.pl", "amazonaws.com", "com.pl", "github.com",
-]
+def load_set_from_file(filepath):
+    """Wczytuje dane z pliku .txt i zwraca je jako zbiór."""
+    if not os.path.exists(filepath):
+        print(f"⚠️ Plik {filepath} nie istnieje. Zwracam pusty zbiór.")
+        return set()
+    
+    with open(filepath, "r", encoding="utf-8") as file:
+        return {line.strip() for line in file if line.strip()}  # Usuwa puste linie i tworzy zbiór
 
-# Pliki wynikowe
-output_file = "Full_DNS_Block.txt"
-backup_file = "Backup_Full_DNS_Block.txt"
-temp_file = output_file + ".tmp"
-optimization_suggestions_file = "Optimization_suggestion.txt"
 
-# Minimalna liczba subdomen do zgłoszenia sugestii
-subdomain_threshold = 100
+# Wczytanie `exclude_list` i `no_optimization_list` z plików
+exclude_list = load_set_from_file(EXCLUDE_LIST_FILE)
+no_optimization_list = load_set_from_file(NO_OPTIMIZATION_LIST_FILE)
 
-# Wyrażenia regularne do sprawdzania poprawności wpisów
 valid_patterns = [
-    r"^0\.0\.0\.0\s+([\w.-]+)$",  # 0.0.0.0 example.com
-    r"^127\.0\.0\.1\s+([\w.-]+)$",  # 127.0.0.1 example.com
-    r"^\|\|([\w.-]+)\^$",  # ||example.com^ (format uBlock/Adblock)
-    r"^([\w.-]+)$",  # example.com (pojedyncza domena)
-    r"^\*\.([\w.-]+)$",  # *.example.com (wildcard subdomen)
-    r"^\|\|(\*\.[\w.-]+)\^$",  # ||*.example.com^ (wildcard w uBlock)
+    r"^0\.0\.0\.0\s+([\w.-]+)$",
+    r"^127\.0\.0\.1\s+([\w.-]+)$",
+    r"^\|\|([\w.-]+)\^$",
+    r"^([\w.-]+)$",
+    r"^\*\.([\w.-]+)$",
+    r"^\|\|(\*\.[\w.-]+)\^$",
 ]
 
-def generate_header():
-    timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    return f"""[Adblock Plus] 
-! Title: Full_DNS_Block 
-! Description: Linked lists to reduce size 
-! Homepage: https://github.com/Seple/Full_DNS_Block 
-! Last modified: {timestamp} 
-! Number of entries: {len(all_rules)} 
 
-"""  
-
-def fetch_list(url, retries=3):
+def fetch_list(url):
+    """Pobiera listę z podanego URL i zwraca linie jako listę."""
+    retries = 3
     for attempt in range(retries):
         try:
-            response = requests.get(url, timeout=10)
+            response = requests.get(url, timeout=5)
             response.raise_for_status()
             lines = response.text.splitlines()
-            print(f"✅ Pobrano: {url} ({len(lines)} reguł)")
+            print(f"✅ Pobrano: {url} ({len(lines)}/{len(set(lines))})")
             return lines
-        except requests.exceptions.RequestException as e:
-            print(f"⚠️ Błąd pobierania {url} (próba {attempt+1}/{retries}): {e}")
-    print(f"❌ Nie udało się pobrać: {url}")
+        except requests.exceptions.RequestException:
+            if attempt < retries - 1:
+                print(f"⚠️ Błąd pobierania {url} (próba {attempt + 1}/{retries})")
+            else:
+                print(f"❌ Nie udało się pobrać: {url}")
     return []
 
+
 def remove_subdomains(domains):
+    """Usuwa subdomeny, pozostawiając tylko główne domeny."""
+    sorted_domains = sorted(domains, key=lambda d: d.count('.'))
     filtered_domains = set()
-    
-    for domain in sorted(domains, key=lambda d: d.count('.')):
-        clean_domain = domain.lstrip("||").rstrip("^")
-        parts = clean_domain.split('.')
-        
-        if not any(f"||{'.'.join(parts[i:])}^" in filtered_domains for i in range(1, len(parts))):
-            filtered_domains.add(f"||{clean_domain}^")
-    
+    for domain in sorted_domains:
+        parts = domain.split('.')
+        if not any('.'.join(parts[i:]) in filtered_domains for i in range(1, len(parts))):
+            filtered_domains.add(domain)
     return filtered_domains
 
-def generate_optimization_suggestions(domains):
-    domain_map = defaultdict(int)
-    
+
+def generate_header(rule_count):
+    """Generuje nagłówek pliku z regułami."""
+    timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    return f"""[Adblock Plus]
+! Title: Full_DNS_Block
+! Description: Linked lists to reduce size
+! Homepage: https://github.com/Seple/Full_DNS_Block
+! Last modified: {timestamp}
+! Number of entries: {rule_count}
+"""
+
+
+def optimize_domains(domains):
+    """Optymalizuje listę domen poprzez redukcję subdomen."""
+    domain_count = defaultdict(int)
+    subdomain_map = defaultdict(set)
+
     for domain in domains:
-        clean_domain = domain.lstrip("||").rstrip("^")
-        parts = clean_domain.split('.')
+        parts = domain.split('.')
         if len(parts) > 2:
             main_domain = '.'.join(parts[-2:])
-            domain_map[main_domain] += 1
-    
-    sorted_domains = sorted(domain_map.items(), key=lambda x: x[1], reverse=True)
-    total_savings = sum(count - 1 for domain, count in sorted_domains if count >= subdomain_threshold and domain not in important_domains)
+            domain_count[main_domain] += 1
+            subdomain_map[main_domain].add(domain)
 
-    if sorted_domains:
-        with open(optimization_suggestions_file, "w", encoding="utf-8") as f:
-            f.write("! Sugestie optymalizacji domen (do ręcznej analizy)\n\n")
-            for main_domain, count in sorted_domains:
-                if count >= subdomain_threshold and main_domain not in important_domains:
-                    f.write(f"||{main_domain}^\n")
-            f.write(f"\n! Potencjalna oszczędność: {total_savings} reguł\n")
-        print(f"✅ Wygenerowano sugestie optymalizacji w {optimization_suggestions_file}")
+    optimized_domains = set(domains)
+    optimization_results = []
 
-all_rules = set()
+    for main_domain, count in domain_count.items():
+        if count > THRESHOLD and main_domain not in domains and main_domain not in no_optimization_list:
+            optimized_domains.add(main_domain)
+            for subdomain in subdomain_map[main_domain]:
+                optimized_domains.discard(subdomain)
+            optimization_results.append((main_domain, count))
+
+    return optimized_domains, optimization_results
+
+
+# 🔹 Pobranie i przetworzenie domen
 total_downloaded = 0
+all_domains = set()
 
-with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
-    results = executor.map(fetch_list, urls)
-    
-    for lines in results:
-        total_downloaded += len(lines)
-        for line in lines:
-            line = line.strip()
-            
-            if not line or line.startswith(('-', '.', '!', '#')):
-                continue
-            
-            matched = False
-            for pattern in valid_patterns:
-                match = re.match(pattern, line)
-                if match:
-                    domain = match.group(1)
-                    rule = f"||{domain}^"
-                    matched = True
-                    break
-            
-            if not matched:
-                continue
-            
-            domain_only = rule[2:-1]
-            if not any(domain_only.endswith(f".{excluded}") or domain_only == excluded for excluded in exclude_list):
-                all_rules.add(rule)
+for url in urls:
+    lines = fetch_list(url)
+    total_downloaded += len(lines)
+    for line in lines:
+        line = line.strip()
+        if not line or re.match(r"^(?!0\.0\.0\.0|127\.0\.0\.1|\|\||\*\.)[^a-zA-Z0-9*|]", line):
+            continue
+        for pattern in valid_patterns:
+            match = re.match(pattern, line)
+            if match:
+                all_domains.add(match.group(1))
+                break
 
-all_rules = remove_subdomains(all_rules)
-removed_rules = total_downloaded - len(all_rules)
+# 🔹 Usunięcie domen z `exclude_list`
+filtered_domains = {domain for domain in all_domains if not any(domain.endswith(f".{excluded}") or domain == excluded for excluded in exclude_list)}
 
-if os.path.exists(output_file):
-    if os.path.exists(backup_file):
-        os.remove(backup_file)
-    shutil.copy(output_file, backup_file)
-    print(f"🔄 Utworzono kopię zapasową: {backup_file}")
+# 🔹 Optymalizacja domen
+final_domains, optimization_suggestions = optimize_domains(remove_subdomains(filtered_domains))
 
-try:
-    with open(temp_file, "w", encoding="utf-8") as f:
-        f.write(generate_header())
-        f.writelines(f"{rule}\n" for rule in sorted(all_rules))
-    os.replace(temp_file, output_file)
-    print(f"✅ Nowa lista zapisana w {output_file}")
-    print(f"📊 Pobranie: {total_downloaded} reguł, Usunięte: {removed_rules}, Pozostałe: {len(all_rules)}")
-    
-    generate_optimization_suggestions(all_rules)
-except Exception as e:
-    print(f"❌ Błąd zapisu pliku: {e}")
+# 🔹 Formatowanie do AdBlock
+formatted_domains = {f"||{domain}^" for domain in final_domains}
+
+# 🔹 Zapis do pliku
+with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    f.write(generate_header(len(formatted_domains)))
+    f.write("\n".join(sorted(formatted_domains)) + "\n")
+
+with open(OPTIMIZATION_LOG_FILE, "w", encoding="utf-8") as f:
+    for domain, count in sorted(optimization_suggestions, key=lambda x: -x[1]):
+        f.write(f"{domain}  (usunięto {count} subdomen)\n")
+
+# 🔹 Podsumowanie
+print(f"✅ Nowa lista zapisana w {OUTPUT_FILE}")
+print(f"📊 Podsumowanie: Pobranie: {total_downloaded} reguł, Unikalne: {len(all_domains)} reguł, Pozostałe po filtracji: {len(final_domains)} reguł")
+print(f"📄 Plik optymalizacji zapisany w {OPTIMIZATION_LOG_FILE}")
