@@ -27,4 +27,4 @@ helios.pl
 biedronka.cloud
 cookielaw.org
 smartadserver.com
-ced.sascdn.com
+sascdn.com
