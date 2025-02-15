@@ -51,8 +51,8 @@
 ||surge.sh^
 ||plesk.page^
 ||nazwa.pl^
-||com.my^
 ||xiaomi.com^
+||com.my^
 ||us.kg^
 ||brizy.site^
 ||backblazeb2.com^
@@ -73,30 +73,30 @@
 ||framer.app^
 ||telekom.hu^
 ||myshopify.com^
-||entekpartners.com^
 ||ne.jp^
+||entekpartners.com^
 ||twojedom.pl^
 ||miui.com^
 ||com.pe^
+||kwistasuzk.pl^
 ||wurp.pl^
 ||free.fr^
-||kwistasuzk.pl^
 ||co.th^
 ||rima-tde.net^
 ||github.io^
-||com.bd^
 ||serswise.pl^
-||owps.pl^
 ||biz.id^
+||com.bd^
+||owps.pl^
 ||sklep.pl^
 ||web.id^
 ||fastly.net^
 ||myqcloud.com^
-||llnw.net^
-||magdach.pl^
 ||taobao.com^
+||magdach.pl^
+||llnw.net^
 ||jouwauhesurvey.top^
 ||b2bmktg.com^
 ||firecantrade.site^
 
-! Potencjalna oszczędność: 75817 reguł
+! Potencjalna oszczędność: 75835 reguł
