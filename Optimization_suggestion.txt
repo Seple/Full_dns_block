@@ -39,8 +39,8 @@
 ||com.ua^
 ||jdhs.pl^
 ||co.il^
-||qq.com^
 ||za.com^
+||qq.com^
 ||myvzw.com^
 ||com.vn^
 ||eu.org^
@@ -51,15 +51,15 @@
 ||surge.sh^
 ||plesk.page^
 ||nazwa.pl^
-||xiaomi.com^
 ||com.my^
+||xiaomi.com^
 ||us.kg^
 ||brizy.site^
 ||backblazeb2.com^
 ||com.tw^
 ||firebaseio.com^
-||paidtomoney.com^
 ||com.pk^
+||paidtomoney.com^
 ||teachable.com^
 ||replit.app^
 ||org.uk^
@@ -73,30 +73,30 @@
 ||framer.app^
 ||telekom.hu^
 ||myshopify.com^
-||ne.jp^
 ||entekpartners.com^
+||ne.jp^
 ||twojedom.pl^
 ||miui.com^
 ||com.pe^
 ||wurp.pl^
-||kwistasuzk.pl^
 ||free.fr^
+||kwistasuzk.pl^
 ||co.th^
 ||rima-tde.net^
 ||github.io^
-||serswise.pl^
 ||com.bd^
+||serswise.pl^
 ||owps.pl^
-||sklep.pl^
 ||biz.id^
+||sklep.pl^
 ||web.id^
 ||fastly.net^
 ||myqcloud.com^
-||taobao.com^
-||magdach.pl^
 ||llnw.net^
+||magdach.pl^
+||taobao.com^
 ||jouwauhesurvey.top^
 ||b2bmktg.com^
 ||firecantrade.site^
 
-! Potencjalna oszczędność: 75809 reguł
+! Potencjalna oszczędność: 75817 reguł
