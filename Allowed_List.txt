@@ -26,3 +26,5 @@ weathercn.com
 helios.pl
 biedronka.cloud
 cookielaw.org
+www3.smartadserver.com
+ced.sascdn.com
