@@ -25,6 +25,3 @@ boltsvc.net
 weathercn.com
 helios.pl
 biedronka.cloud
-cookielaw.org
-smartadserver.com
-sascdn.com
