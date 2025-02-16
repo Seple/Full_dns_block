@@ -4778,6 +4778,3 @@ zlg.br
 zombie.jp
 zp.ua
 zt.ua
-amazonaws.com
-windows.com
-tiktokv.com
