@@ -1,2 +1,3 @@
 com.pl
 co.uk
+amazonaws.com
