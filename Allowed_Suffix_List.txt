@@ -4781,3 +4781,4 @@ zt.ua
 amazonaws.com
 amazon.com
 fastly.net
+microsoft.com
