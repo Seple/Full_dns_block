@@ -4779,3 +4779,4 @@ zombie.jp
 zp.ua
 zt.ua
 amazonaws.com
+fastly.net
