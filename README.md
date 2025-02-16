@@ -79,39 +79,6 @@ While this script aggressively blocks unwanted content, the following DNS blockl
 
 ## ✅ Allowed Domains
 
-While this script aggressively blocks unwanted content, the following domains remain **whitelisted** to ensure proper functionality of essential services:
-
-### 🎯 Facebook
-
-- `b-graph-fallback.facebook.com`
-- `b-graph.facebook.com`
-- `graph-fallback.facebook.com`
-- `graph.facebook.com`
-- `graph.fbpigeon.com`
-- `z-m-graph.facebook.com`
-- `web.facebook.com`
-- `web-fallback.facebook.com`
-- `connect.facebook.com`
-- `connect.facebook.net`
-- `mqtt-mini.facebook.com`
-
-### 🎮 Games and Android Apps
-
-- `mycafe.games`
-- `tinyco.com`
-- `shephertz.com`
-- `hihonorcloud.com`
-- `matchmasters.io`
-- `candivore.com`
-- `salusconnect.io`
-- `v-speed.eu`
-- `livechatinc.com`
-- `error2.XX`
-
-### 🔍 Google
-
-- `googletagmanager.com`
-
----
+[Allowed List](https://github.com/Seple/Full_DNS_Block/blob/main/Allowed_List.txt)
 
 ### 🚧 **Please be understanding the project is under development** 🚧
