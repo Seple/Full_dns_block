@@ -4782,5 +4782,9 @@ amazonaws.com
 amazon.com
 fastly.net
 microsoft.com
+windows.com
+windows.net
+live.com
+msn.com
 apple.com
 wordpress.com
