@@ -4815,3 +4815,5 @@ netflix.com
 twitter.com
 hp.com
 cdn77.org
+deviantart.com
+alibabadns.com
