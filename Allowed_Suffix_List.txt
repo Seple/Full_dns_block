@@ -4787,6 +4787,7 @@ windows.net
 live.com
 msn.com
 apple.com
+aaplimg.com
 wordpress.com
 google.com
 samsung.com
