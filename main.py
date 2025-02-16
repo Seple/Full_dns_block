@@ -13,7 +13,7 @@ OUTPUT_FILE = "Full_DNS_Block.txt"
 OPTIMIZATION_LOG_FILE = "Optimization_suggestion.txt"
 
 # Stała wartość progu subdomen
-THRESHOLD = 100
+THRESHOLD = 70
 
 # Lista URLi do pobrania (można edytować w pliku zewnętrznym)
 urls = [
