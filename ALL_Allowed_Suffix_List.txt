@@ -1,7 +1,0 @@
-Testowa lista 100% wyjątków z optymalizacji
-
-com.pl
-co.uk
-amazonaws.com
-windows.com
-tiktokv.com
