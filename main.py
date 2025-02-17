@@ -23,43 +23,15 @@ urls = [
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/ultimate.txt",
     # OISD - Różne poziomy filtracji
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_27.txt",
-    # Peter Lowe's Blocklist
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_3.txt",
     # Steven Black's List
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_33.txt",
-    # Dan Pollock's List
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_4.txt",
     # AdGuard DNS filter
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt",
-    # AWAvenue Ads Rule
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_53.txt",
-    # Malicious URL Blocklist (URLHaus)
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt",
-    # uBlock filters – Badware risks
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_50.txt",
-    # Stalkerware Indicators List
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_31.txt",
     # ShadowWhisperer's Malware List
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_42.txt",
-    # Scam Blocklist by DurableNapkin
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_10.txt",
-    # NoCoin Filter List
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_8.txt",
     # Dandelion Sprout's Anti-Malware List
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_12.txt",
-    # Phishing URL Blocklist (PhishTank and OpenPhish)
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_30.txt",
-    # POL: Polish filters for Pi-hole
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_14.txt",
-    # POL: CERT Polska List of malicious domains
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_41.txt",
-    # WindowsSpyBlocker - Hosts spy rules
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_23.txt",
-    # Dandelion Sprout's Anti Push Notifications
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_39.txt",
-    # Dandelion Sprout's Game Console Adblock List)
-    "https://adguardteam.github.io/HostlistsRegistry/assets/filter_6.txt",
-    # Perflyst and Dandelion Sprout's Smart-TV Blocklist
+    ## Perflyst and Dandelion Sprout's Smart-TV Blocklist
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_7.txt",
     # HaGeZi's DynDNS Blocklist
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_54.txt",
@@ -69,16 +41,10 @@ urls = [
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_18.txt",
     # HaGeZi's Anti-Piracy Blocklist
     "https://adguardteam.github.io/HostlistsRegistry/assets/filter_46.txt",
-    # AdGuard Base filter
-    "https://filters.adtidy.org/extension/ublock/filters/2_without_easylist.txt",
-    # AdGuard Tracking Protection filter
+    ## AdGuard Tracking Protection filter
     "https://filters.adtidy.org/extension/ublock/filters/3.txt",
-    # EasyPrivacy
+    ## EasyPrivacy
     "https://easylist.to/easylist/easyprivacy.txt",
-    # EasyList
-    "https://easylist.to/easylist/easylist.txt",
-    # Fanboy's Annoyance List
-    "https://secure.fanboy.co.nz/fanboy-annoyance.txt",
     # HaGeZi's Badware Hoster DNS Blocklist
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/hoster.txt",
     # HaGeZi's safesearch not supported DNS Blocklist
